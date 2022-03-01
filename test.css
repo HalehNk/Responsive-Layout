@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li,
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* CMT first comment */
+.paragraph {
+  font-size: 4rem;
+  color: midnightblue;
+  background-color: aliceblue;
+}
+
+@media only screen and (min-width: 800px) {
+  .paragraph {
+    font-size: 5rem;
+    background-color: steelblue;
+    color: aliceblue;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  body {
+    background-color: cadetblue;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .hidden-in-large-screen {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hidden-in-small-screen {
+    display: none;
+  }
+}

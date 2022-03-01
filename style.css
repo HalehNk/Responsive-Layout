@@ -1,16 +1,12 @@
-/* CMT Style Grid System - Responsive  */
-/* Standard media query for responsive design */
-/* BootStrap media query breakpoints */
-
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-/* body {
-  /* direction: rtl;
-} */
+html {
+  font-size: 62.5%;
+}
 
 a {
   text-decoration: none;
@@ -26,12 +22,10 @@ ul {
 
 .mb-20 {
   margin-bottom: 20px;
-  /* CMT make it bigger or smaller later */
 }
 
 .mt-20 {
   margin-top: 20px;
-  /* CMT make it bigger or smaller later */
 }
 
 .img-responsive {
@@ -40,66 +34,74 @@ ul {
 }
 
 .round-corner {
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+/* EXP the whole grid system is in a container
+      bc ex: col-12 = 100%; and we dont want that 100% to take the whole view port */
+.container {
+  max-width: 1200px; /* size of the largest media query */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .container-fluid {
-  width: 100%;
+  width: 100%; /* for elements which we want to cover 100% of the view port */
 }
 
-.container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* WHY do we use the row class? imagin u want a col-6 on one
+row and then another col-6 on the next row, u put each
+col-6 in a row class so they wont be side by side */
+/* CMT this wont do the whole side by side thing on its own.
+we need to give each col-class a float left */
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
 
-/* CMT Every class that starts with 'col' will have this style */
+/* NET media query break points
+   xs= < 576px
+   sm= >= 576px
+   md= >= 768px
+   lg= >= 992px
+   xl= >= 1200px */
+
+/* CMT for different columns to be side by side */
 [class^="col-"] {
-  float: right;
-  padding-left: 15px;
-  padding-right: 15px;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-/* CMT for Extra Small devices */
-@media only screen and (max-width: 576px) {
+/* CMT extra small */
+@media screen and (max-width: 576px) {
   .col-xs-1 {
     width: 8.33%;
   }
-
   .col-xs-2 {
     width: 16.66%;
   }
-
   .col-xs-3 {
     width: 25%;
   }
-
   .col-xs-4 {
     width: 33.33%;
   }
-
   .col-xs-5 {
     width: 41.66%;
   }
-
   .col-xs-6 {
     width: 50%;
   }
-
   .col-xs-7 {
     width: 58.33%;
   }
-
   .col-xs-8 {
     width: 66.66%;
   }
-
   .col-xs-9 {
     width: 75%;
   }
@@ -113,47 +115,37 @@ ul {
     width: 100%;
   }
 
-  /* CMT if we had only f.e. 5 cols and we wanted to center them,
-     we need to give it margin so it'll be centered*/
-  /* CMT margin right for persian
-         margin left for eng */
-  /* CMT offsent = space from edge of the page */
+  /* CMT offset */
+  /* WHY do we have offset-0? bc imagine you only have col-md-6 and col-md-offset-3 to center it,
+  if u use col-xl-12 u r gonna have an unwanted space and ur grid is gonna look out of shape
+  if we didnt use col-md-offset-3 we didnt need the offset-0 */
   .col-xs-offset-0 {
     margin-left: 0;
   }
-
   .col-xs-offset-1 {
     margin-left: 8.33%;
   }
-
   .col-xs-offset-2 {
     margin-left: 16.66%;
   }
-
   .col-xs-offset-3 {
     margin-left: 25%;
   }
-
   .col-xs-offset-4 {
     margin-left: 33.33%;
   }
-
   .col-xs-offset-5 {
     margin-left: 41.66%;
   }
-
   .col-xs-offset-6 {
     margin-left: 50%;
   }
-
   .col-xs-offset-7 {
     margin-left: 58.33%;
   }
-
   .col-xs-offset-8 {
     margin-left: 66.66%;
   }
-
   .col-xs-offset-9 {
     margin-left: 75%;
   }
@@ -168,40 +160,32 @@ ul {
   }
 }
 
-/* CMT Small */
+/* CMT small */
 @media only screen and (min-width: 576px) {
   .col-s-1 {
     width: 8.33%;
   }
-
   .col-s-2 {
     width: 16.66%;
   }
-
   .col-s-3 {
     width: 25%;
   }
-
   .col-s-4 {
     width: 33.33%;
   }
-
   .col-s-5 {
     width: 41.66%;
   }
-
   .col-s-6 {
     width: 50%;
   }
-
   .col-s-7 {
     width: 58.33%;
   }
-
   .col-s-8 {
     width: 66.66%;
   }
-
   .col-s-9 {
     width: 75%;
   }
@@ -215,43 +199,34 @@ ul {
     width: 100%;
   }
 
-  /* offset */
+  /* CMT offset */
   .col-s-offset-0 {
     margin-left: 0;
   }
-
   .col-s-offset-1 {
     margin-left: 8.33%;
   }
-
   .col-s-offset-2 {
     margin-left: 16.66%;
   }
-
   .col-s-offset-3 {
     margin-left: 25%;
   }
-
   .col-s-offset-4 {
     margin-left: 33.33%;
   }
-
   .col-s-offset-5 {
     margin-left: 41.66%;
   }
-
   .col-s-offset-6 {
     margin-left: 50%;
   }
-
   .col-s-offset-7 {
     margin-left: 58.33%;
   }
-
   .col-s-offset-8 {
     margin-left: 66.66%;
   }
-
   .col-s-offset-9 {
     margin-left: 75%;
   }
@@ -266,40 +241,32 @@ ul {
   }
 }
 
-/* CMT Medium */
+/* CMT madium */
 @media only screen and (min-width: 768px) {
   .col-md-1 {
     width: 8.33%;
   }
-
   .col-md-2 {
     width: 16.66%;
   }
-
   .col-md-3 {
     width: 25%;
   }
-
   .col-md-4 {
     width: 33.33%;
   }
-
   .col-md-5 {
     width: 41.66%;
   }
-
   .col-md-6 {
     width: 50%;
   }
-
   .col-md-7 {
     width: 58.33%;
   }
-
   .col-md-8 {
     width: 66.66%;
   }
-
   .col-md-9 {
     width: 75%;
   }
@@ -313,43 +280,34 @@ ul {
     width: 100%;
   }
 
-  /* offset */
+  /* CMT offset */
   .col-md-offset-0 {
     margin-left: 0;
   }
-
   .col-md-offset-1 {
     margin-left: 8.33%;
   }
-
   .col-md-offset-2 {
     margin-left: 16.66%;
   }
-
   .col-md-offset-3 {
     margin-left: 25%;
   }
-
   .col-md-offset-4 {
     margin-left: 33.33%;
   }
-
   .col-md-offset-5 {
     margin-left: 41.66%;
   }
-
   .col-md-offset-6 {
     margin-left: 50%;
   }
-
   .col-md-offset-7 {
     margin-left: 58.33%;
   }
-
   .col-md-offset-8 {
     margin-left: 66.66%;
   }
-
   .col-md-offset-9 {
     margin-left: 75%;
   }
@@ -364,40 +322,32 @@ ul {
   }
 }
 
-/* CMT Large */
+/* CMT large */
 @media only screen and (min-width: 992px) {
   .col-l-1 {
     width: 8.33%;
   }
-
   .col-l-2 {
     width: 16.66%;
   }
-
   .col-l-3 {
     width: 25%;
   }
-
   .col-l-4 {
     width: 33.33%;
   }
-
   .col-l-5 {
     width: 41.66%;
   }
-
   .col-l-6 {
     width: 50%;
   }
-
   .col-l-7 {
     width: 58.33%;
   }
-
   .col-l-8 {
     width: 66.66%;
   }
-
   .col-l-9 {
     width: 75%;
   }
@@ -411,7 +361,7 @@ ul {
     width: 100%;
   }
 
-  /* offset */
+  /* CMT offset */
   .col-l-offset-0 {
     margin-left: 0;
   }
@@ -461,41 +411,32 @@ ul {
     margin-left: 100%;
   }
 }
-
-/* CMT Extra Large */
+/* CMT extra large */
 @media only screen and (min-width: 1200px) {
   .col-xl-1 {
     width: 8.33%;
   }
-
   .col-xl-2 {
     width: 16.66%;
   }
-
   .col-xl-3 {
     width: 25%;
   }
-
   .col-xl-4 {
     width: 33.33%;
   }
-
   .col-xl-5 {
     width: 41.66%;
   }
-
   .col-xl-6 {
     width: 50%;
   }
-
   .col-xl-7 {
     width: 58.33%;
   }
-
   .col-xl-8 {
     width: 66.66%;
   }
-
   .col-xl-9 {
     width: 75%;
   }
@@ -509,43 +450,34 @@ ul {
     width: 100%;
   }
 
-  /* offset */
+  /* CMT offset */
   .col-xl-offset-0 {
     margin-left: 0;
   }
-
   .col-xl-offset-1 {
     margin-left: 8.33%;
   }
-
   .col-xl-offset-2 {
     margin-left: 16.66%;
   }
-
   .col-xl-offset-3 {
     margin-left: 25%;
   }
-
   .col-xl-offset-4 {
     margin-left: 33.33%;
   }
-
   .col-xl-offset-5 {
     margin-left: 41.66%;
   }
-
   .col-xl-offset-6 {
     margin-left: 50%;
   }
-
   .col-xl-offset-7 {
     margin-left: 58.33%;
   }
-
   .col-xl-offset-8 {
     margin-left: 66.66%;
   }
-
   .col-xl-offset-9 {
     margin-left: 75%;
   }
